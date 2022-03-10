@@ -8,7 +8,18 @@ def create_app():
     """Create and configure an instance of the Flask application."""
     app = Flask(__name__)
     app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
-    app.register_blueprint(simple_pages)
-    app.context_processor(utility_text_processors)
+
+    @app.route("/")
+    @app.route("/base.html")
+    def index():
+        return render_template("base.html")
+    @app.route("/git.html")
+    def git():
+        return render_template("/git.html")
+    @app.route("/git.html")
+    def git():
+        return render_template("/git.html")
+
 
     return app
+

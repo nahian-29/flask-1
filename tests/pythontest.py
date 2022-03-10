@@ -1,5 +1,5 @@
 
-def test_request_page1(client):
+def test_request_example(client):
     """This makes the index page"""
     response = client.get("/python.html")
     assert response.status_code == 200

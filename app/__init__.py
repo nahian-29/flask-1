@@ -20,6 +20,5 @@ def create_app():
     def git():
         return render_template("/git.html")
 
-
     return app
 
